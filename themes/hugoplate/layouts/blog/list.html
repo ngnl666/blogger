@@ -1,27 +1,29 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
-
-
-  <section class="section">
+  <section class="section pt-20">
     <div class="container">
       <div class="row gx-5">
         <!-- blog posts -->
-        <div class="lg:col-8">
+        <div class="lg:col-9">
           <div class="row">
-            {{ $paginator:= .Paginate .RegularPages }}
-            {{ range $paginator.Pages }}
-              <div class="md:col-6 mb-14">
-                {{ partial "components/blog-card" . }}
-              </div>
+            {{ $paginator := .Paginate .RegularPages }}
+            {{ range $index, $page := $paginator.Pages }}
+              {{ partial "components/blog-list" . }}
+              {{ if ne $index (sub (len $paginator.Pages) 1) }}
+                <div class="mt-8 mb-12 md:mt-4 md:mb-6 px-5">
+                  <hr />
+                </div>
+              {{ end }}
             {{ end }}
           </div>
           {{ partial "components/pagination.html" . }}
         </div>
         <!-- sidebar -->
-        <div class="lg:col-4">
-          <!-- widget -->
-          {{ $widget:= site.Params.widgets.sidebar }}
-          {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+        <div class="hidden lg:block lg:col-3">
+          <div class="sticky top-[180px]">
+            {{ $widget:= site.Params.widgets.sidebar }}
+            {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+          </div>
         </div>
       </div>
     </div>
