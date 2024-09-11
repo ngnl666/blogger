@@ -36,7 +36,9 @@
       "primary": "Heebo:wght@400;600",
       "primary_type": "sans-serif",
       "secondary": "Signika:wght@500;700",
-      "secondary_type": "sans-serif"
+      "secondary_type": "sans-serif",
+      "tertiary": "Noto Serif TC:wght@400;700",
+      "tertiary_type": "serif"
     },
     "font_size": {
       "base": "16",
