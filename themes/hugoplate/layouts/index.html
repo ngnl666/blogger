@@ -1,0 +1,80 @@
+{{ define "main" }}
+  <!-- Banner -->
+  {{ with .Params.banner }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-7 md:col-9 mb-8 text-center">
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-8">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              {{ if .enable }}
+                <a
+                  class="btn btn-primary"
+                  href="{{ .link | absURL }}"
+                  {{ if strings.HasPrefix .link `http` }}
+                    target="_blank" rel="noopener"
+                  {{ end }}>
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class="col-12">
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[600px]" "DisplayXL" "600x" ) }}
+          </div>
+          <div class="text-center">
+            <i
+              class="fa fa-chevron-down text-gray-500 text-2xl animate-bounce mt-14"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
+  <!-- Recent Posts -->
+  {{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  <div class="container">
+    <div class="row justify-center">
+      {{ range first 3 $posts }}
+        <div class="md:col-9 mb-14">
+          {{ partial "components/blog-card.html" . }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  <!-- /Recent Posts -->
+
+  <!-- Explore More -->
+  <div class="flex flex-col items-center gap-3 mb-32">
+    <div class="flex flex-col items-center gap-4 mt-10 mb-20">
+      <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-dark-default"></div>
+      <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-dark-default"></div>
+      <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-dark-default"></div>
+    </div>
+    <h3 class="text-blue-500 dark:text-purple-500 text-center">
+      Want To Explore More Articles
+    </h3>
+    <div class="text-left flex flex-col gap-2">
+      <a href="{{ "blog" | relLangURL }}">
+        <h3
+          class="text-green-700 dark:text-green-600 dark:hover:text-green-400 cursor-pointer hover:text-green-500 hover:underline">
+          ? Blog
+        </h3>
+      </a>
+      <a href="{{ "about" | relLangURL }}">
+        <h3
+          class="text-orange-600 dark:text-orange-600 dark:hover:text-orange-400 cursor-pointer hover:text-orange-400 hover:underline">
+          : About
+        </h3>
+      </a>
+    </div>
+  </div>
+  <!-- /Explore More -->
+{{ end }}

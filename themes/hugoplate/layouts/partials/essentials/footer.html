@@ -1,0 +1,39 @@
+<footer class="bg-body dark:bg-darkmode-body">
+  <div class="container">
+    <div class="row justify-center items-center gap-4">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0">
+        <ul class="social-icons">
+          {{ range site.Data.social.main }}
+            <li>
+              <a
+                target="_blank"
+                aria-label="{{ .name }}"
+                rel="nofollow noopener"
+                href="{{ .link | safeURL }}">
+                <i class="{{ .icon }}"></i>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="text-light dark:text-darkmode-light container text-center">
+        <p class="font-secondary">
+          <a
+            class="navbar-brand inline-block size-6 mr-2 svg:text-light"
+            href="{{ site.Home.RelPermalink }}">
+            {{ partial "logo" }}
+          </a>
+          {{ site.Params.author_copyright | markdownify }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="py-7 pt-3">
+    <div
+      class="text-light font-secondary dark:text-darkmode-light container text-center">
+      <p>
+        {{ site.Params.copyright | markdownify }}
+      </p>
+    </div>
+  </div>
+</footer>
