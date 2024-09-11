@@ -5,5 +5,5 @@
 </p>
 
 <p align="center">
-  <img src="images/blog-home.png" alt="Arron's Blog Home Page" width="100%">
+  <img src="https://drive.google.com/file/d/1-BN4SOJhptu1LdD9V9SygM2WS9ka8Jc2/view?usp=sharing" alt="Arron's Blog Home Page" width="100%">
 </p>
