@@ -13,7 +13,7 @@ draft: false
 
 主要內容會著重在前端系統設計和~~一點點的後端~~ (希望...
 
-有任何文章上的建議或是興趣交流，歡迎在底下留言或聯絡我 :D
+有任何文章上的建議或是興趣交流，歡迎與我聯絡 :D
 
 ---
 
@@ -23,4 +23,4 @@ The purpose of creating this blog is to remind myself to keep learning and share
 
 The content will focus on front-end system design and ~~a little bit of backend~~ (hopefully...
 
-If you have any suggestions for the articles or share your thoughts, feel free to leave a message or contact me below. :D
+If you have any suggestions for the articles or share your thoughts, feel free to leave a message and contact me below. :D
