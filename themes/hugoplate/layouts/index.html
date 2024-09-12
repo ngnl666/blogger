@@ -38,18 +38,18 @@
   {{ end }}
   <!-- /Banner -->
 
-  <!-- Recent Posts -->
-  {{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  <!-- Pinned Posts -->
+  {{ $pinnedPosts := where (where site.RegularPages "Type" "in" site.Params.mainSections) "Params.pinned" true }}
   <div class="container">
     <div class="row justify-center">
-      {{ range first 3 $posts }}
+      {{ range $pinnedPosts }}
         <div class="md:col-9 mb-14">
           {{ partial "components/blog-card.html" . }}
         </div>
       {{ end }}
     </div>
   </div>
-  <!-- /Recent Posts -->
+  <!-- /Pinned Posts -->
 
   <!-- Explore More -->
   <div class="flex flex-col items-center gap-3 mb-32">
