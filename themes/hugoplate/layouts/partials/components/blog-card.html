@@ -2,10 +2,10 @@
   {{ $image:= .Params.image }}
   {{ if $image }}
     <a href="{{ .RelPermalink }}">
-      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded-t-md") }}
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full aspect-video object-cover rounded-t-md") }}
     </a>
   {{ end }}
-  <div class="p-4 pb-5">
+  <div class="px-4 pb-5">
     <h4 class="mb-3">
       <a href="{{ .RelPermalink }}">
         {{ .Title }}

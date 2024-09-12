@@ -1,17 +1,17 @@
 ---
-title: "測試測試"
-meta_title: ""
-description: "this is meta description"
-date: 2022-04-04T05:00:00Z
-image: "/images/image-placeholder.png"
-categories: ["Application", "Data"]
-author: "John Doe"
-tags: ["nextjs", "tailwind"]
+title: "使用 TypeScript 建立具可擴展性的 React 元件庫"
+meta_title: "使用 TypeScript 建立具可擴展性的 React 元件庫"
+description: "{{ .Summary | truncate 100 }}"
+date: 2024-09-12T05:00:00Z
+image: "/images/advanced-component-library/cover.png"
+categories: ["Frontend"]
+author: "Arron"
+tags: ["react", "typescript", "tailwind"]
 draft: false
 pinned: true
 ---
 
-測試測試 consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
